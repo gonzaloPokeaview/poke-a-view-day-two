@@ -17,7 +17,7 @@ const getAllPokemon = async () => {
     const fetchPokeData = async (item) => {
       const pokeDataResponse = await fetch(item);
       const pokeData = await pokeDataResponse.json();
-      console.log(pokeData);
+      // console.log(pokeData);
       const pokeBox = document.createElement('div');
       const name = document.createElement('h2');
       const sprite = document.createElement('img');
@@ -45,7 +45,7 @@ const getAllPokemon = async () => {
         if(e.target.id === `${pokeData.name}Button`){
           if (card.style.display === 'none') {
             card.style.display = 'block';
-            
+            button.value = `Close`;
             pokeData.game_indices.forEach(async (item) => {
               console.log(item.version.name);
               const game = document.createElement('p')
